@@ -1,0 +1,35 @@
+
+### GET ดึงข้อมูลผู้ป่วยทั้งหมด
+GET http://localhost:3000/api/patients
+
+### GET ดึงข้อมูลผู้ป่วย id=1
+GET http://localhost:3000/api/patients/1
+
+### GET ดึงข้อมูลผู้ป่วย ที่ไม่มีในระบบ
+GET http://localhost:3000/api/patients/9999
+
+### POST สร้างผู้ป่วยใหม่
+POST http://localhost:3000/api/patients
+Content-Type: application/json
+
+{
+    "Name": "Somchai",
+    "DOB": "1990-01-15",
+    "Gender": "Male",
+    "Phone": "0812345678",
+    "Address": "Bangkok"
+}
+
+
+### PUT แก้ไขผู้ป่วย id=1 
+PUT http://localhost:3000/api/patients/1
+Content-Type: application/json
+
+{
+    "Phone": "0899999999",
+    "Address": "Chiang Mai"
+}
+
+### DELETE ลบผู้ป่วย id=1
+DELETE http://localhost:3000/api/patients/1
+

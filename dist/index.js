@@ -1,0 +1,10 @@
+import { serve } from '@hono/node-server';
+import { Hono } from 'hono';
+import userRoute from './user/index.js';
+import patientApp from './patient/index.js';
+const app = new Hono();
+app.route('/api/users', userRoute);
+app.route('/api/roles', userRoute);
+app.route('/api/patients', patientApp);
+serve({ fetch: app.fetch, port: 3000 });
+console.log('Server is running on http://localhost:3000');
